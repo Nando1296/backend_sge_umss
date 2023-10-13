@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateMesasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('mesas', function (Blueprint $table) {
+            $table->id('COD_MESA');
+            $table->integer('COD_CARRERA')->nullable();
+            $table->integer('COD_COMITE')->nullable();
+            $table->string('UBICACION', 30);
+            $table->integer('NUM_MESA');
+            $table->integer('CANT_EST_MESA');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('mesas');
+    }
+}
