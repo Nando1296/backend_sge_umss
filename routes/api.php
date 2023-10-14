@@ -17,6 +17,6 @@ use App\Models\Eleccion;
 */
 
 Route::get('/procesoElectoral', [EleccionController::class, 'index'])->name('procesoElectoral');
-Route::post('/procesoElectoral/nuevo', [EleccionController::class, 'store'])->name('procesoElectoral');
+Route::post('/procesoElectoral/nuevo', [EleccionController::class, 'store'])->name('procesoElectoral-store');
 Route::get('/procesoElectoral/{id}', [EleccionController::class, 'show'])->name('procesoElectoral-edit');
 Route::patch('/procesoElectoral/{id}', [EleccionController::class, 'update'])->name('procesoElectoral-update');

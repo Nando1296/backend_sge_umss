@@ -12,6 +12,7 @@ class Poblacion extends Model
     public $incrementing = false;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_SIS';
+    protected $guarded = [];
 
     public function tribunalElectoralUniversitario(){
         return $this->belongsTo(TribunalElectoralUniversitario::class, 'COD_TEU');

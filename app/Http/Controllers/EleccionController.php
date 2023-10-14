@@ -21,7 +21,7 @@ class EleccionController extends Controller
             return response()->json(['error' => 'No se encontraron procesos electorales.'], 404);
         }
 
-        return response()->json($elecciones, 50);
+        return response()->json($elecciones);
     }
 
     /**
@@ -30,12 +30,12 @@ class EleccionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(validarEleccion $request)
+    public function store(Request $request)
     {
         $eleccion = new Eleccion([
             'MOTIVO_ELECCION' => $request->MOTIVO_ELECCION,
-            'FECHA_INI_ELECCION' => $request->FECHA_INI_ELECCION,
-            'FECHA_FIN_ELECCION' => $request->FECHA_FIN_ELECCION,
+            'FECHA_INI_CONVOCATORIA' => $request->FECHA_INI_CONVOCATORIA,
+            'FECHA_FIN_CONVOCATORIA' => $request->FECHA_FIN_CONVOCATORIA,
             'FECHA_ELECCION' => $request->FECHA_ELECCION,
         ]);
 
@@ -69,7 +69,7 @@ class EleccionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(validarEleccion $request, $id)
+    public function update(Request $request, $id)
     {
         $eleccion = Eleccion::find($id);
 
@@ -80,8 +80,8 @@ class EleccionController extends Controller
 
         $eleccion->update([
         'MOTIVO_ELECCION' => $request->MOTIVO_ELECCION,
-        'FECHA_INI_ELECCION' => $request->FECHA_INI_ELECCION,
-        'FECHA_FIN_ELECCION' => $request->FECHA_FIN_ELECCION,
+        'FECHA_INI_CONVOCATORIA' => $request->FECHA_INI_CONVOCATORIA,
+        'FECHA_FIN_CONVOCATORIA' => $request->FECHA_FIN_CONVOCATORIA,
         'FECHA_ELECCION' => $request->FECHA_ELECCION,
         ]);
 

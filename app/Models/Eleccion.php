@@ -10,6 +10,8 @@ class Eleccion extends Model
     use HasFactory;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_ELECCION';
+    //protected $fillable=['MOTIVO_ELECCION','FECHA_INI_CONVOCATORIA','FECHA_FIN_CONVOCATORIA','FECHA_ELECCION']; //añadir en todos los modelos
+    protected $guarded = []; //añadir en todos los modelos
 
     public function tribunalElectoralUniversitario(){
         return $this->belongsTo(TribunalElectoralUniversitario::class, 'COD_TEU');

@@ -10,6 +10,7 @@ class Comite_Electoral extends Model
     use HasFactory;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_COMITE';
+    protected $guarded = [];
 
     public function tribunalElectoralUniversitario(){
         return $this->belongsTo(TribunalElectoralUniversitario::class, 'COD_TEU');

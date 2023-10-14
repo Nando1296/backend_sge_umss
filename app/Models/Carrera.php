@@ -12,6 +12,7 @@ class Carrera extends Model
     public $incrementing = false;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_CARRERA';
+    protected $guarded = [];
 
     public function mesa(){
         return $this->hasMany(Mesa::class, 'COD_MESA');
