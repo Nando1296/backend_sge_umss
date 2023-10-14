@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EleccionController;
+use App\Models\Eleccion;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/procesoElectoral', [EleccionController::class, 'index'])->name('procesoElectoral');
+Route::post('/procesoElectoral/nuevo', [EleccionController::class, 'store'])->name('procesoElectoral');
+Route::get('/procesoElectoral/{id}', [EleccionController::class, 'show'])->name('procesoElectoral-edit');
+Route::patch('/procesoElectoral/{id}', [EleccionController::class, 'update'])->name('procesoElectoral-update');
