@@ -33,6 +33,10 @@ class EleccionController extends Controller
     public function store(Request $request)
     {
         $eleccion = new Eleccion([
+            'COD_ADMIN' => $request->COD_ADMIN,
+            'COD_FRENTE' => $request->COD_FRENTE,
+            'COD_TEU' => $request->COD_TEU,
+            'COD_COMITE' => $request->COD_COMITE,
             'MOTIVO_ELECCION' => $request->MOTIVO_ELECCION,
             'FECHA_INI_CONVOCATORIA' => $request->FECHA_INI_CONVOCATORIA,
             'FECHA_FIN_CONVOCATORIA' => $request->FECHA_FIN_CONVOCATORIA,
