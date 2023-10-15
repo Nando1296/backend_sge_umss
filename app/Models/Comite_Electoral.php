@@ -9,8 +9,19 @@ class Comite_Electoral extends Model
 {
     use HasFactory;
     protected $keyType = 'integer';
-    protected $primaryKey = 'COD_COMITE';
 
+    protected $table = 'comite_electorals'; // Nombre de la tabla en la base de datos
+
+    protected $primaryKey = 'COD_COMITE'; // Clave primaria de la tabla
+
+    protected $fillable = [
+        'COD_ADMIN',
+        'COD_TEU',
+        'COD_ELECCION',
+        'CARGO_CE',
+        'FECHA_INI_CE',
+    ];
+    
     public function tribunalElectoralUniversitario(){
         return $this->belongsTo(TribunalElectoralUniversitario::class, 'COD_TEU');
     }

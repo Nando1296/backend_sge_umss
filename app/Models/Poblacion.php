@@ -11,7 +11,26 @@ class Poblacion extends Model
     use HasFactory;
     public $incrementing = false;
     protected $keyType = 'integer';
-    protected $primaryKey = 'COD_SIS';
+
+
+
+    protected $table = 'poblacions';
+
+    protected $primaryKey = 'COD_SIS'; // Ajusta la clave primaria según tus necesidades
+
+    protected $fillable = [
+        'COD_CANDIDATO',
+        'COD_CARRERA',
+        'COD_JURADO',
+        'COD_COMITE',
+        'COD_TEU',
+        'APELLIDOS',
+        'NOMBRES',
+        'CI',
+        'ESTUDIANTE',
+        'DOCENTE',
+    ];
+
 
     public function tribunalElectoralUniversitario(){
         return $this->belongsTo(TribunalElectoralUniversitario::class, 'COD_TEU');

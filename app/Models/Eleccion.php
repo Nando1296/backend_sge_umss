@@ -9,7 +9,25 @@ class Eleccion extends Model
 {
     use HasFactory;
     protected $keyType = 'integer';
+    protected $table = 'ELECCIONS';
     protected $primaryKey = 'COD_ELECCION';
+
+     // Nombre de la tabla en la base de datos
+
+
+
+    protected $fillable = [
+        'COD_ADMIN',
+        'COD_FRENTE',
+        'COD_TEU',
+        'COD_COMITE',
+        'MOTIVO_ELECCION',
+        'FECHA_ELECCION',
+        'FECHA_INI_CONVOCATORIA',
+        'FECHA_FIN_CONVOCATORIA',
+        'ELECCION_ACTIVA'
+        // Agrega otros campos aquí
+    ];
 
     public function tribunalElectoralUniversitario(){
         return $this->belongsTo(TribunalElectoralUniversitario::class, 'COD_TEU');
