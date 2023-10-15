@@ -11,6 +11,7 @@ class Administrador extends Model
     public $incrementing = false;
     protected $keyType = 'string';
     protected $primaryKey = 'COD_ADMIN';
+    protected $guarded = [];
 
     public function comiteElectoral(){
         return $this->hasOne(Comite_Electoral::class,'COD_COMITE');

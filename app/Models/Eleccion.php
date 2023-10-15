@@ -11,6 +11,8 @@ class Eleccion extends Model
     protected $keyType = 'integer';
     protected $table = 'ELECCIONS';
     protected $primaryKey = 'COD_ELECCION';
+    //protected $fillable=['MOTIVO_ELECCION','FECHA_INI_CONVOCATORIA','FECHA_FIN_CONVOCATORIA','FECHA_ELECCION']; //añadir en todos los modelos
+    protected $guarded = []; //añadir en todos los modelos
 
      // Nombre de la tabla en la base de datos
 

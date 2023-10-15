@@ -10,6 +10,7 @@ class Mesa extends Model
     use HasFactory;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_MESA';
+    protected $guarded = [];
     
     public function jurado(){
         return $this->hasMany(Jurado::class, 'COD_JURADO');

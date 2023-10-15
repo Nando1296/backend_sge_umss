@@ -14,6 +14,7 @@ class Poblacion extends Model
 
 
 
+
     protected $table = 'poblacions';
 
     protected $primaryKey = 'COD_SIS'; // Ajusta la clave primaria según tus necesidades
@@ -30,6 +31,10 @@ class Poblacion extends Model
         'ESTUDIANTE',
         'DOCENTE',
     ];
+
+
+
+    protected $guarded = [];
 
 
     public function tribunalElectoralUniversitario(){

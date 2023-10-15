@@ -10,6 +10,7 @@ class TribunalElectoralUniversitario extends Model
     use HasFactory;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_TEU';
+    protected $guarded = [];
 
     public function poblacion(){
         return $this->hasMany(Poblacion::class, 'COD_SIS');

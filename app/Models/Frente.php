@@ -10,6 +10,7 @@ class Frente extends Model
     use HasFactory;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_FRENTE';
+    protected $guarded = [];
 
     public function eleccion(){
         return $this->hasMany(Eleccion::class, 'COD_ELECCION');

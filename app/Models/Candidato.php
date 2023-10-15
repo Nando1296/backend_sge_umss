@@ -11,6 +11,7 @@ class Candidato extends Model
     public $incrementing = false;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_CANDIDATO';
+    protected $guarded = [];
 
     public function frente(){
         return $this->belongsTo(Frente::class, 'COD_FRENTE');

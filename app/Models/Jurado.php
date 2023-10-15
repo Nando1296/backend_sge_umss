@@ -10,6 +10,7 @@ class Jurado extends Model
     use HasFactory;
     protected $keyType = 'integer';
     protected $primaryKey = 'COD_JURADO';
+    protected $guarded = [];
 
     public function poblacion(){
         return $this->hasOne(Poblacion::class, 'COD_SIS');

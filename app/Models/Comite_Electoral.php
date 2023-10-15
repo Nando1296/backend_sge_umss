@@ -10,6 +10,10 @@ class Comite_Electoral extends Model
     use HasFactory;
     protected $keyType = 'integer';
 
+
+    protected $guarded = [];
+
+
     protected $table = 'comite_electorals'; // Nombre de la tabla en la base de datos
 
     protected $primaryKey = 'COD_COMITE'; // Clave primaria de la tabla

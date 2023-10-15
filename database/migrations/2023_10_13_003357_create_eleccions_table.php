@@ -19,11 +19,11 @@ class CreateEleccionsTable extends Migration
             $table->integer('COD_FRENTE')->nullable();
             $table->integer('COD_TEU')->nullable();
             $table->integer('COD_COMITE')->nullable();
-            $table->string('MOTIVO_ELECCION', 30);
+            $table->string('MOTIVO_ELECCION', 50);
             $table->date('FECHA_ELECCION');
             $table->date('FECHA_INI_CONVOCATORIA');
             $table->date('FECHA_FIN_CONVOCATORIA');
-            $table->boolean('ELECCION_ACTIVA');
+            $table->boolean('ELECCION_ACTIVA')->default(TRUE);
             $table->timestamps();
         });
     }
