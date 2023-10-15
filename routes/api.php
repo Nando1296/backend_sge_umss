@@ -6,7 +6,7 @@ use App\Http\Controllers\EleccionController;
 use App\Models\Eleccion;
 
 use App\Http\Controllers\PoblacionController;
-use App\Http\Controllers\EleccionController;
+
 use App\Http\Controllers\ComiteElectoralController;
 use App\Http\Controllers\AsociarTitularSuplenteController;
 /*
@@ -36,7 +36,7 @@ Route::get('/ver-lista-comite/{idComite}', [AsociarTitularSuplenteController::cl
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-=======
+
 Route::get('/procesoElectoral', [EleccionController::class, 'index'])->name('procesoElectoral');
 Route::post('/procesoElectoral/nuevo', [EleccionController::class, 'store'])->name('procesoElectoral-store');
 Route::get('/procesoElectoral/{id}', [EleccionController::class, 'show'])->name('procesoElectoral-edit');
