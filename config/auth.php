@@ -36,8 +36,17 @@ return [
     */
 
     'guards' => [
+        // 'web' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        // ],
         'web' => [
             'driver' => 'session',
+            'provider' => 'administradores',
+        ],
+    
+        'api' => [
+            'driver' => 'token',
             'provider' => 'users',
         ],
     ],
@@ -60,15 +69,15 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-
         // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
+        //     'driver' => 'eloquent',
+        //     'model' => User::class,
         // ],
+    
+        'administradores' => [
+            'driver' => 'database',
+            'table' => 'administradors',
+        ],
     ],
 
     /*
@@ -109,3 +118,4 @@ return [
     'password_timeout' => 10800,
 
 ];
+
